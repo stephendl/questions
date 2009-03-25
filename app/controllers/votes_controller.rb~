@@ -25,6 +25,7 @@ class VotesController < ApplicationController
   # GET /votes/new.xml
   def new
     @vote = Vote.new
+    @vote.question=params[:question]
 
     respond_to do |format|
       format.html # new.html.erb

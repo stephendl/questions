@@ -3,7 +3,7 @@
   <%=h @question.name %>
   <br/>
   <b>Votes:</b>
-  <%=h @question.vote_count %>
+  <%=h @question.votes.count-@question.unvotes.count %>
 </p>
 
 <% form_for [@question, Vote.new] do |v| %>
