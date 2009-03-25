@@ -3,14 +3,14 @@
   <%=h @question.name %>
   <br/>
   <b>Votes:</b>
-  <%=h @question.votes.count-@question.unvotes.count %>
+  <%=h @question.vote_count %>
 </p>
 
 <% form_for [@question, Vote.new] do |v| %>
   <p><%= v.submit "Vote Up" %></p>
 <% end %>
  | 
-<% form_for [@question, Unvote.new] do |v| %>
+<% form_for [@question, Unvote.new, :value => 1] do |v| %>
   <p><%= v.submit "Vote Down" %></p>
 <% end %>
 
