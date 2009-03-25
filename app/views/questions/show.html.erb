@@ -1,8 +1,17 @@
 <p>
   <b>Name:</b>
   <%=h @question.name %>
+  <br/>
+  <b>Votes:</b>
+  <%=h @question.votes.count %>
 </p>
 
+<% form_for [@question, Vote.new] do |v| %>
+  <p><%= v.submit "Vote Up" %></p>
+<% end %>
+
+
+<p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

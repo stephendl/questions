@@ -25,6 +25,7 @@ class VotesController < ApplicationController
   # GET /votes/new.xml
   def new
     @vote = Vote.new
+    @vote.question=params[:question]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,11 +42,13 @@ class VotesController < ApplicationController
   # POST /votes.xml
   def create
     @vote = Vote.new(params[:vote])
+    @question = Question.find(params[:question_id])
+    @vote.question=@question
 
     respond_to do |format|
       if @vote.save
         flash[:notice] = 'Vote was successfully created.'
-        format.html { redirect_to(@vote) }
+        format.html { redirect_to(@question) }
         format.xml  { render :xml => @vote, :status => :created, :location => @vote }
       else
         format.html { render :action => "new" }
