@@ -1,8 +1,7 @@
 class Question < ActiveRecord::Base
 	has_many :votes
-	has_many :unvotes
 
 	def vote_count
-		votes.count - unvotes.count
+		votes.find(:all, :conditions => { :up => true }).count - votes.find(:all, :conditions => { :up => false }).count
 	end
 end

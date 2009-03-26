@@ -43,6 +43,7 @@ class VotesController < ApplicationController
     @vote = Vote.new(params[:vote])
     @question = Question.find(params[:question_id])
     @vote.question=@question
+    @vote.up=params[:up]
 
     respond_to do |format|
       if @vote.save

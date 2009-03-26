@@ -7,10 +7,12 @@
 </p>
 
 <% form_for [@question, Vote.new] do |v| %>
+  <%= hidden_field_tag :up, true %>
   <p><%= v.submit "Vote Up" %></p>
 <% end %>
  | 
-<% form_for [@question, Unvote.new] do |v| %>
+<% form_for [@question, Vote.new] do |v| %>
+  <%= hidden_field_tag :up, false %>
   <p><%= v.submit "Vote Down" %></p>
 <% end %>
 

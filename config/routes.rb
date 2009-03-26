@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :unvotes
   map.resources :votes
-  map.resources :questions, :has_many => [ :votes, :unvotes ]
+  map.resources :questions, :has_many => :votes
 
   # The priority is based upon order of creation: first created -> highest priority.
 
