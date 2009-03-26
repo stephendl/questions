@@ -1,6 +1,3 @@
 class Vote < ActiveRecord::Base
-	belongs_to :question
-
-	def value= (val)
-		@value = val
+	belongs_to :questio
 end
