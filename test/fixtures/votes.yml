@@ -1,9 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  question_id: 1
+  question: one
   person_id: 1
+  up: true
 
 two:
-  question_id: 1
+  question: two
   person_id: 1
+  up: false
+  
+up2:
+  question: evens
+  person_id: 1
+  up: true
+
+down2:
+  question: evens
+  person_id: 1
+  up: false
