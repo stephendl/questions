@@ -10,12 +10,3 @@ two:
   person_id: 1
   up: false
   
-up2:
-  question: evens
-  person_id: 1
-  up: true
-
-down2:
-  question: evens
-  person_id: 1
-  up: false
